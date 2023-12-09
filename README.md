@@ -2,23 +2,5 @@
 
 ## Description
 
-## Installation
-
-## Usage
-
-## Contributing
-
-## License
-
-## Project status
-
-## Author
-
-## Acknowledgements
-
-## Contact
-
-## Project link
-
-## Project dependencies
-
+- https://github.com/ryanmcdermott/clean-code-javascript
+- https://github.com/devictoribero/clean-code-javascript
