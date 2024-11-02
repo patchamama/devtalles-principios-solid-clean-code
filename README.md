@@ -562,3 +562,51 @@ const userSettings = new UserSettings({
 
 console.log({ userSettings });
 ```
+
+### Estructura recomendada de una clase
+
+> "El buen código parece estar escrito por alquien a quien le importa". - Michael Feathers
+
+Primero se deben de definir las propiedades, así:
+1. Propiedades estáticas (`public static variableName: type;`),
+2. Propiedades públicas (`private variableName: type;`).
+3. Propiedades privadas
+
+Después los métodos:
+1. Empezar por los constructores estáticos (`static nameFunction(parámetros) {}`)
+2. Luego el constructor (`constructor (parámetros)`) y luego constructores privados de existir.
+3. Seguidamente los métodos estáticos (`functionName (parámetros) {}`)
+4. Métodos privados después (`get métodoName() : type {}`).
+5. Resto de métodos de instancia ordenados de mayor a menor importancia.
+6. Getters y Setters al final.
+
+```js
+class HtmlElement {
+    public static domReady: boolean = false; //propiedad estática
+
+    public isReadyOnly: boolean = false; // Propiedad pública
+
+    private _id: string; // propiedades privadas
+    private type: string;
+    private updatedAt: number: 
+
+    static createInput( id: string ) { // constructor estático (método estático que regresa una instancia de la clase)
+        return new HtmlElement(id, 'input');
+    }
+
+    constructor( id: string, type: string ) { 
+        this._id = id;
+        this.type = type;
+        this.updatedAt = Date.now();
+    }
+
+    setType( type: string ) { // métodos estáticos
+        this.type = type;
+        this.updateAt = Date.now();
+    }
+
+    get id(): string { // métodos privados
+        return this.id;
+    }
+}
+```
