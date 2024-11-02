@@ -631,3 +631,8 @@ Nuestro código debe de ser suficientemente auto explicativo. Sí fuera necesari
 Significa que se debe de usar la misma estructura de los directorios. Los frameworks brindan estándares para nombrar los `filesystem` y establecen cómo nombrar los archivos, en qué carpeta guardarlos, la estructura de los mismos. 
 También es importante respetar la identación que elija el equipo de desarrollo (espacios), es decir, las convenciones pactadas para identar los bloques de códigos. Normalmente se usa un determinado autoformateado del equipo, seguir los estándares del lenguaje de desarrollo (python).
 
+## Sección 4. Acrónimo - STUPID
+
+Aquí se analizan los antipatrones, es decir, las cosas que no se deben de hacer. Aquí se incluye todo lo llamado `code smells`, es decir, código que huele mal.
+
+ 
