@@ -576,9 +576,9 @@ Después los métodos:
 1. Empezar por los constructores estáticos (`static nameFunction(parámetros) {}`)
 2. Luego el constructor (`constructor (parámetros)`) y luego constructores privados de existir.
 3. Seguidamente los métodos estáticos (`functionName (parámetros) {}`)
-4. Métodos privados después (`get métodoName() : type {}`).
+4. Métodos privados después.
 5. Resto de métodos de instancia ordenados de mayor a menor importancia.
-6. Getters y Setters al final.
+6. Getters y Setters al final (ejemplo: `get métodoName() : type {}`).
 
 ```js
 class HtmlElement {
@@ -605,8 +605,19 @@ class HtmlElement {
         this.updateAt = Date.now();
     }
 
-    get id(): string { // métodos privados
+    get id(): string { // getter
         return this.id;
     }
 }
 ```
+
+### Comentarios en el código
+
+Cuando necesites añadir comentarios a tu código, es porque no es lo suficientemente autoexplicativo, lo cual quiere decir que no estamos escogiendo nuevos nombres, por lo que seguramente se hace necesario refactorizar el código.
+Cuando usamos librerías de terceros, APIS, frameworks, etc., nos encontramos ante situaciones en las que escribir un comentario será mejor que dejar una solución compleja o un hack sin explicación. 
+
+**Los comentarios deberían de ser la excepción, no la regla**.
+
+> "No comentes el código mal escrito, reescríbelo". - Brian W. Kernighan
+
+Nuestro código debe de ser suficientemente auto explicativo. Sí fuera necesario comentar algo, debería de ser el ¿por qué? en lugar del ¿qué? o ¿cómo? pues esto último ya lo muestra el código (el cómo), pero por qué has decidido hacer algo de una determinada forma sí puede ser comentado.
