@@ -635,4 +635,30 @@ También es importante respetar la identación que elija el equipo de desarrollo
 
 Aquí se analizan los antipatrones, es decir, las cosas que no se deben de hacer. Aquí se incluye todo lo llamado `code smells`, es decir, código que huele mal.
 
- 
+### CodeSmells - STUPID
+
+Acrónimo STUPID. El concepto está relacionado con la deuda ténica.
+
+6 Code Smells que debemos de evitar:
+
+- **S**ingleton: patrón singleton.
+- **T**ight Coupling: alto acoplamiento.
+- **U**ntestability: código no probable o testeable (unit test).
+- **P**remature optimization: optimizaciones prematuras.
+- **I**ndescriptive Naming: nombres poco descriptivos.
+- **D**uplication: duplicidad de código, no aplicar el principio DRY.
+
+**Patrón Singleton**
+
+PROS:
+- Garantiza una única instancia de la clase a lo largo de toda la aplicación. 
+
+CONS: (¿por qué code smell?)
+- Vive en el contexto global.
+- Puede ser modificado por cualquiera y en cualquier momento.
+- No es rasteable.
+- Difícil de testear debido a su ubicación.
+
+Ejemplo [aquí](./src/code-smells/01-singleton.js).
+
+
