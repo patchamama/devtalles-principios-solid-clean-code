@@ -189,3 +189,13 @@ interface SendEmailOptions {
 }
 function sendEmail( {toWhom, from, body, subject, apikey} : SendEmailOptions): boolean {}
 ```
+
+### Detalles adicionales sobre funciones
+
+> Otras recomendaciones:
+> - Simplicidad es fundamental
+> - Funciones de tamaño reducido (de lo contrario hace más de lo que debía hacer)
+> - Prioridad a funciones de una sola línea sin causar complejidad innecesaria
+> - Recomendación de menos de 20 líneas de código
+> - Evitar el uso del "else" a menos de que sea estrictamente necesario
+> - Priorizar el uso de la condicional ternaria ( `condición ? result_true : result_false;`)
