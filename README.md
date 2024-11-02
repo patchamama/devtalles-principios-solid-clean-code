@@ -59,6 +59,8 @@ interface IUser { };
 class User { };
 interface User { };
 
+//--------------------------------------
+
 // Mal
 // Archivos a evaluar - files to evaluate
 const fs = [
@@ -84,4 +86,64 @@ const filesToEvaluate = [
 const filesToDelete = filesToEvaluate.map( file => file.flagged );
 ```
 
+### Nombres según el tipo de dato
+
+```js
+// Arreglos, usar la descripción en plural y describiendo que contiene el arreglo en la variable
+// malo
+const fruit=['manzana','platano','fresa']
+
+//regular
+const fruitList=['manzana','platano','fresa']
+
+//bueno
+const fruits=['manzana','platano','fresa']
+
+//mejor (pues se sabe literalmente lo que hay que son nombres de frutas)
+const fruitNames=['manzana','platano','fresa']
+
+// ----------------------------
+// Booleanos mejor en forma de pregunta para que tenga un mejor valor semántico
+// mal
+const open = true;
+const write = true;
+const fruit = true;
+const active = false;
+const noValues = true;
+const notEmpty = false;
+
+// mejor
+const isOpen = true;
+const canWrite = true;
+const hasFruit = true;
+const isActive = false;
+const hasValues = false;
+const isEmpty = true;
+
+// ----------------------------
+// Números
+// mal
+const fruits = 3;
+const cars = 10;
+
+// mejor
+const maxFruits = 5;
+const minFruits = 1;
+const totalFruits = 3;
+const totalOfCars = 5;
+
+// ----------------------------
+// funciones: deben de representar acciones que por lo general debe de ser un verbo seguido por un sustantivo, 
+// el nombre de la función debe de ser descriptivo y conciso, debe de expresar lo que hace pero debe de abstenerse
+// de todo lo que hace la función.
+// mal
+createUserIfNotExists(); 
+updateUserIfNotEmpty();
+sendEmailIfFieldsValid();
+
+//mejor
+createUser();
+updateUser();
+sendEmail();
+```
 
