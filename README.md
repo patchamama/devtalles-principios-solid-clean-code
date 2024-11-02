@@ -170,3 +170,22 @@ class Processor {};
 class SpecialMonsterView {};
 ```
 
+### Nombres de funciones, argumentos y parámetros
+
+> Sabemos que estamos trabajando con código limpio sí la función hace exactamente lo que el nombre de la función indica.
+
+> Se recomienda que se limite el número máximo de parámetros a 3, pues sino se hace más complicado de leer.  
+
+```js
+function sendEmail( toWhom: string, from: string, body: string, subject: string, apikey: string): boolean {}
+
+//mejor usando una interfase con reestructuración y además se puede especificar el orden de los parámetros cómo uno lo desee
+interface SendEmailOptions {
+    toWhom: string; 
+    from: string; 
+    body: string; 
+    subject: string; 
+    apikey: string;
+}
+function sendEmail( {toWhom, from, body, subject, apikey} : SendEmailOptions): boolean {}
+```
