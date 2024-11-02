@@ -254,3 +254,6 @@ class Product {
     console.log(bluePants.toString());
 })();
 ```
+
+## Sección 3. Clean Code - Clases y comentarios
+
