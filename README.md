@@ -567,6 +567,8 @@ console.log({ userSettings });
 
 > "El buen código parece estar escrito por alquien a quien le importa". - Michael Feathers
 
+La estructura de las clases es un acuerdo que toma el equipo.
+
 Primero se deben de definir las propiedades, así:
 1. Propiedades estáticas (`public static variableName: type;`),
 2. Propiedades públicas (`private variableName: type;`).
@@ -621,3 +623,11 @@ Cuando usamos librerías de terceros, APIS, frameworks, etc., nos encontramos an
 > "No comentes el código mal escrito, reescríbelo". - Brian W. Kernighan
 
 Nuestro código debe de ser suficientemente auto explicativo. Sí fuera necesario comentar algo, debería de ser el ¿por qué? en lugar del ¿qué? o ¿cómo? pues esto último ya lo muestra el código (el cómo), pero por qué has decidido hacer algo de una determinada forma sí puede ser comentado.
+
+### Uniformidad en el proyecto
+
+> Problemas similares, soluciones similares.
+
+Significa que se debe de usar la misma estructura de los directorios. Los frameworks brindan estándares para nombrar los `filesystem` y establecen cómo nombrar los archivos, en qué carpeta guardarlos, la estructura de los mismos. 
+También es importante respetar la identación que elija el equipo de desarrollo (espacios), es decir, las convenciones pactadas para identar los bloques de códigos. Normalmente se usa un determinado autoformateado del equipo, seguir los estándares del lenguaje de desarrollo (python).
+
