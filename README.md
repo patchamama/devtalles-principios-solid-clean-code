@@ -199,3 +199,58 @@ function sendEmail( {toWhom, from, body, subject, apikey} : SendEmailOptions): b
 > - Recomendación de menos de 20 líneas de código
 > - Evitar el uso del "else" a menos de que sea estrictamente necesario
 > - Priorizar el uso de la condicional ternaria ( `condición ? result_true : result_false;`)
+
+
+### Principio DRY (Don't Repeat Yourself)
+
+> "Sí quieres ser un programador productivo, esfuérzate en escribir código legible". - Robert C. Martin
+
+> DRY:
+> - Simplemente es evitar tener duplicidad de código,
+> - Simplifica las pruebas,
+> - Ayuda a centralizar procesos,
+> - Aplicar el principio DRY, usualmente lleva a refactorizar
+
+```js
+type Size = ''| 'S'|'M'|'XL';
+
+class Product {
+    constructor(
+        public name: string = '',
+        public price: number = 0,
+        public size: Size = '',
+    ){}
+
+    isProductReady(): boolean {    
+        for( const key in this ) {
+            switch( typeof this[key] ) {
+                case 'string':
+                    if ( (<string><unknown>this[key]).length <= 0 ) throw Error(`${ key } is empty`);
+                break;
+                case 'number':
+                    if ( (<number><unknown>this[key]) <= 0 ) throw Error(`${ key } is zero`);
+                break;
+                default:
+                    throw Error(`${ key } with type ${ typeof this[key] } is not valid`);
+            }
+        }
+        return true;
+    }
+
+    toString() {    
+        //no con principio DRY
+        // if (this.name.length <= 0) throw Error('name is empty')
+        // if (this.price <= 0) throw Error('price is zero')
+        // if (this.size.length <= 0) throw Error('name is empty')
+
+        // DRY
+        if ( !this.isProductReady ) return;
+        return `${ this.name } (${ this.price }), ${ this.size }`
+    }
+}
+
+(()=> {
+    const bluePants = new Product('Blue Pants', 10,'S');
+    console.log(bluePants.toString());
+})();
+```
