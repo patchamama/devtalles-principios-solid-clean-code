@@ -88,6 +88,8 @@ const filesToDelete = filesToEvaluate.map( file => file.flagged );
 
 ### Nombres según el tipo de dato
 
+> Sí las definiciones de variables o constantes van a acompañadas de comentarios que explican la razón de la variable, entonces eso es un mal indicador pues no sería necesario esto y de por sí las variables deberían de explicarse por sí solas con su nombre, de la funcionalidad que tienen pro sí solas. 
+
 ```js
 // Arreglos, usar la descripción en plural y describiendo que contiene el arreglo en la variable
 // malo
@@ -145,5 +147,26 @@ sendEmailIfFieldsValid();
 createUser();
 updateUser();
 sendEmail();
+```
+
+### Consideraciones para las clases
+
+Las clases deben de tener nombres formados por un sustantivo o frases de sustantivos. Debemos de evitar nombres genéricos porque pueden llevar a que las clases realizan más trabajo del que real deben de hacer. Se debe de usar UpperCamelCase. Más palabra !== mejor nombre.
+
+3 preguntas para determinar saber sí una clase usa un buen nombre:
+- ¿Qué exactamente hace la clase?
+- ¿Cómo exactamente esta clase realiza cierta tarea?
+- ¿Hay algo específico sobre su ubicación?
+
+> Si algo no tiene sentido, remuévalo o refactoriza.
+
+```js
+// malos (son muy genéricos)
+class Manager {};
+class Data {};
+class Info {};
+class Individual {};
+class Processor {};
+class SpecialMonsterView {};
 ```
 
