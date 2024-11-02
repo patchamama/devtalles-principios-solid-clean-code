@@ -243,7 +243,7 @@ class Product {
         // if (this.price <= 0) throw Error('price is zero')
         // if (this.size.length <= 0) throw Error('name is empty')
 
-        // DRY
+        // con principio DRY
         if ( !this.isProductReady ) return;
         return `${ this.name } (${ this.price }), ${ this.size }`
     }
@@ -257,3 +257,41 @@ class Product {
 
 ## Sección 3. Clean Code - Clases y comentarios
 
+Los comentarios deben de explicar cosas como la razón de tomar algún camino y no otra solución, por qué se decide hacer una función de una forma y no de otra, es decir, cuando en sí el nombre de la función o variable no se autoexplicativa. 
+
+### Breve introducción a las clases en TypeScript
+
+```js
+// Forma larga de definir una clase en TS
+type Gender = 'M'|'F';
+
+class Person {
+    public name: string, 
+    public gender: Gender, 
+    public birthdate: Date
+    constructor(name: string, gender: Gender, birthdate: Date){
+        this.name = name, 
+        this.gender = Gender, 
+        this.birthdate = birthdate;
+    }
+}
+
+const newPerson = new Person('Fernando', 'M', new Date('1985-10-21'))
+console.log({ newPerson });
+```
+
+```js
+// Forma corta de definir una clase en TS
+type Gender = 'M'|'F';
+
+class Person {
+    constructor(
+        public name: string, 
+        public gender: Gender, 
+        public birthdate: Date
+    ){}
+}
+
+const newPerson = new Person('Fernando', 'M', new Date('1985-10-21'))
+console.log({ newPerson });
+```
