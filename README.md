@@ -280,6 +280,10 @@ const newPerson = new Person('Fernando', 'M', new Date('1985-10-21'))
 console.log({ newPerson });
 ```
 
+### Herencia - Problemática
+
+En el siguiente ejemplo se genera una clase padre Person de la que heredan dos clases que a su vez al crearse una constante que llame a estas, deben de pasarse los parámetros de la clase hija y los de la clase padre a su vez pues está heredando ciertas propiedades y esto puede ser muy trabajoso, sobretodo sí se llama como en el ejemplo un `new UserSettings()` por todos los parámetros que hay que pasarle.
+
 ```js
 // Forma corta de definir una clase en TS
 type Gender = 'M'|'F';
@@ -292,6 +296,47 @@ class Person {
     ){}
 }
 
-const newPerson = new Person('Fernando', 'M', new Date('1985-10-21'))
-console.log({ newPerson });
+class User extends Person {
+    public lastAccess: Date;
+    constructor(
+        public email: string,
+        public role: string,
+        name: string,
+        gender: Gender,
+        birthdate: Date,
+    ) {
+        super( name, gender, birthdate );  // llama al constructor de la clase padre
+        this.lastAccess = new Date();
+    }
+
+    checkCredentials() {
+        return true;  // revisaría sí está autenticado
+    }
+}
+
+class UserSettings extends User {
+    constructor(
+        public workingDirectory: string,
+        public lastOpenFolder  : string,
+        email                  : string,
+        role                   : string,
+        name                   : string,
+        gender                 : Gender,
+        birthdate              : Date
+    ) {
+        super(email, role, name, gender, birthdate );
+    }
+}
+
+const userSettings = new UserSettings(
+    '/usr/home',
+    '/home',
+    'fernando@google.com',
+    'Admin',
+    'Fernando',
+    'M',
+    new Date('1985-10-21')
+);
+
+    console.log({ userSettings });
 ```
