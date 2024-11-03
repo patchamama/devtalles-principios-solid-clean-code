@@ -642,7 +642,7 @@ Acrónimo STUPID. El concepto está relacionado con la deuda ténica.
 6 Code Smells que debemos de evitar:
 
 - **S**ingleton: patrón singleton.
-- **T**ight Coupling: alto acoplamiento.
+- **T**ight Coupling: alto acoplamiento (y baja cohesión).
 - **U**ntestability: código no probable o testeable (unit test).
 - **P**remature optimization: optimizaciones prematuras.
 - **I**ndescriptive Naming: nombres poco descriptivos.
@@ -662,3 +662,31 @@ CONS: (¿por qué code smell?)
 Ejemplo [aquí](./src/code-smells/01-singleton.js).
 
 
+### Acoplamiento y cohesión
+
+- **T**ight Coupling: alto acoplamiento y pésima cohesión (en realidad lo ideal es tener un bajo acomplamiento y una alta cohesión).
+
+Desventajas del alto acoplamiento:
+- Un cambio en un módulo por lo general provoca un efecto dominó de los cambios en otros módulos,
+- El ensamblaje de módulos puede requerir más esfuerzo y/o tiempo debido a la mayor dependencia enre módulos,
+- Un módulo en particular puede ser más difícil de reutilizar y/o probar porque se deben incluir módulos dependientes.
+
+> "Queremos diseñar componentes que sean autocontenidos, autosuficientes e independientes. Con un objetivo y un propósito bien definido". - The pragmatic programer
+
+**Cohesión**
+Lo ideal es tener bajo acoplamiento y buena o alta cohesión.
+- **La cohesión se refiere a lo que la clase (o módulo) puede hacer.
+- La baja cohesión significaría que la clase realiza una gran variedad de acciones: es amplia, no se enfoca en lo que debe hacer.
+- Alta cohesión significa que la clase se enfoca en lo que debería estar haciendo, es decir, solo métodos relacionados con la intención de la clase.
+
+**Acoplamiento**
+Lo ideal es tener bajo acomplamiento y buena cohesión.
+- **Se refiere a cuán relacionadas o dependientes son dos clases o módulos entre sí** 
+- *En bajo acoplamiento*, cambiar algo importante en una clase no debería afectar a la otra.
+- *En alto acoplamiento*, dificultaría el cambio y el mantenimiento de su código; dado que las clases están muy unidas, hacer un cambio podría requerir una renovación completa del sistema,
+
+> Un buen diseño de software tiene alta cohesión y bajo acoplamiento
+
+En [este](./src/code-smells/02-high-coupling.ts) ejemplo sí se cambia la clase Person y se cambia por ejemplo, el nombre de la variable `lastName` por otro nombre, esto determina que hay que modificar las clases que heredan sus propiedades (pues tienen un alto acomplamiento) cambiando esta propiedad en las clases hijas.  
+
+En [este](./src/code-smells/02-low-coupling.ts) archivo hay un acoplamiento menor, lo que determina que con menos cambios se alcanza lo que se desea, por ejemplo sí se desea agregar la propiedad `firsName` y renombrar la propiedad `lastName`.
