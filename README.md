@@ -727,5 +727,9 @@ Duplicidad accidental:
 - Cuando hay un cambio, sólo hay que modificar un sólo lugar,
 - Este tipo de duplicidad se puede trabajar con parámetros u optimizaciones.
 
+### Otros olores honoríficos (extraídos sobretodo de refactoring.guru)
 
+- Inflación: Cuando un método tiene muchas líneas de código (> 10 líneas) se debería de pensar en hacerlo un poco más pequeño. Usualmente lo que se hace es cortar este método en pequeños submétodos en dependencia a pequeñas tareas. También está el caso de las clases supergrandes, que aumentan a nivel que el programa sigue creciendo junto con las características requeridas que cumpla, en este caso se pudieran separar las mismas en pequeñas subclases o módulos en dependencia de las subtareas requeridas. 
+- Obsesión primitiva: el uso de primitivos o constante en lugar de objetos o clases nuevos por problemas de comodidad. En este caso el tratamiento es que sí hay gran cantidad de variables de tipo primitivo seguramente se pudieran reunir en una clase u objeto que quizás pudiera permitir su reuso en otra parte del programa.
+- Lista larga de parámetros: más de 3 parámetros en una función o método. Sí se usan muchos parámetros, quizás alguno no sea necesario o se le está dando demasiada funcionalidad a la función, clase. Comprobar que todos los parámetros son estrictamente necesarios. Sí algún método es el resultado de un retorno de una función, quizás se pudiera llamar al mismo dentro de la función. 
 
