@@ -690,3 +690,42 @@ Lo ideal es tener bajo acomplamiento y buena cohesión.
 En [este](./src/code-smells/02-high-coupling.ts) ejemplo sí se cambia la clase Person y se cambia por ejemplo, el nombre de la variable `lastName` por otro nombre, esto determina que hay que modificar las clases que heredan sus propiedades (pues tienen un alto acomplamiento) cambiando esta propiedad en las clases hijas.  
 
 En [este](./src/code-smells/02-low-coupling.ts) archivo hay un acoplamiento menor, lo que determina que con menos cambios se alcanza lo que se desea, por ejemplo sí se desea agregar la propiedad `firsName` y renombrar la propiedad `lastName`.
+
+### Code Smells adicionales
+
+**Código no problable**
+- Código difícilmente testeable,
+- Código con alto acoplamiento,
+- Código con muchas dependencias no inyectadas,
+- Dependencias en el contexto global (Tipo Singleton)
+
+> Debemos de tener en mente las pruebas desde la creación del código.
+
+**Optimizaciones prematuras**
+- Mantener abiertas las opciones retrasando la toma de decisiones nos permite darle mayor relevancia a lo que es más importante en una aplicación.
+- No debemos anticiparnos a los requisitos y desarrollar abstracciones innecesarias que puedan añadir complejidad accidental.
+
+Complejidad accidental: Cuando implementamos una solución compleja a la mínima indispensable
+Complejidad esencial: La complejidad es inherente al problema.
+Se debe de encontrar un equilibrio entre estas complejidades.
+
+Nombres poco descriptivos:
+- Nombres de variables mal nombradas,
+- Nombres de clases genéricas,
+- Nombres de funciones mal nombradas,
+- Ser muy específico o demasiado genérico.
+
+Duplicidad de código: No aplicar el principio DRY:
+Duplicidad Real:
+- Código es idéntico y cumple la misma función,
+- Un cambio implicaría actualizar todo el código idéntico en varios lugares,
+- Incrementa posibilidades de error humano al olvidar una parte para actualizar,
+- Mayor cantidad de pruebas innecesarias.
+
+Duplicidad accidental:
+- Código luce similar pero cumple funciones distintas,
+- Cuando hay un cambio, sólo hay que modificar un sólo lugar,
+- Este tipo de duplicidad se puede trabajar con parámetros u optimizaciones.
+
+
+
