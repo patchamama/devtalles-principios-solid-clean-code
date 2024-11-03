@@ -762,5 +762,12 @@ Tener más de una responsabilidad de nuestras clases o módulos, hace que nuestr
 
 "tener una única responsabilidad" !== "hacer una única cosa", queremos que nuestras clases y módulos se encarguen de hacer un grupo de procesos que estén estrechamente relacionados entre sí. El principio SRP no se base en crear clases de un solo método sino en diseñar componentes que estén solo expuestos a una fuente de cambios.
 
+### Detectar incumplimiento de SRP (principio de resposabilidad única)
 
+- Nombres de clases y módulos demasiado genéricos (por lo que tiene demasiada responsabilidad, lo que permite detectar que quizás una propiedad o método no debería incluirse en estos)
+- Cambio en el código suelen afectar la clase o módulo,
+- La case involucra múltiples capas (almacenamiento, comunicación con la bds, ...),
+- Número elevado de importaciones (sí una clase o módulo abstracto hace una tarea específica, no debe de tener muchas importaciones)
+- Cantidad elevada de métodos públicos (demasiados métodos expuestos al mundo exterior, lo que determina que está haciendo demasiadas cosas),
+- En la clase o módulo hay un excesivo número de líneas de código, lo que determina que pueda tener demasiada responsabilidad.
 
