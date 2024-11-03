@@ -740,3 +740,7 @@ Duplicidad accidental:
 - Cadena de mensajes: Tenemos una función A, que llama a B, que de B llama a C. Esto es un problema porque el cliente depende de la navegación de clases, de módulos, estructura. La solución es ver sí se puede eliminar toda esa cadena de comunicación, reduciendo las dependencias entre clases o módulos y se reduce la cantidad de código, permitiendo en el caso anterior que A acceda directamente a C.
 - The middle man (el hombre del medio): Sí una clase realiza solo una acción y la acción es delegar en otra clase (entonces por qué existe esta clase?), esto puede ser el resultado de la eliminación de cadena de mensajes (punto anterior) o una refactorización incompleta. 
 
+
+## Sección 5. Principios SOLID
+
+Son principios y no reglas (esta última es algo que hay que cumplir). 
