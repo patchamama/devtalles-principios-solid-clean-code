@@ -733,3 +733,10 @@ Duplicidad accidental:
 - Obsesión primitiva: el uso de primitivos o constante en lugar de objetos o clases nuevos por problemas de comodidad. En este caso el tratamiento es que sí hay gran cantidad de variables de tipo primitivo seguramente se pudieran reunir en una clase u objeto que quizás pudiera permitir su reuso en otra parte del programa.
 - Lista larga de parámetros: más de 3 parámetros en una función o método. Sí se usan muchos parámetros, quizás alguno no sea necesario o se le está dando demasiada funcionalidad a la función, clase. Comprobar que todos los parámetros son estrictamente necesarios. Sí algún método es el resultado de un retorno de una función, quizás se pudiera llamar al mismo dentro de la función. 
 
+### Acopladores
+
+- Feature Envy (envidia de una característica): Un método, clase, módulo o función accede más a los métodos de otra clase, módulo o función, más que a los suyos propios. Se puede tratar como regla básica, quizás cambiar ese método o función en el lugar al que se referencia.
+- Intimidad inapropiada: Cuando una clase usa campos o métodos internos de otra clase. Las buenas clases deben de saber lo menos posible de otras clases. 
+- Cadena de mensajes: Tenemos una función A, que llama a B, que de B llama a C. Esto es un problema porque el cliente depende de la navegación de clases, de módulos, estructura. La solución es ver sí se puede eliminar toda esa cadena de comunicación, reduciendo las dependencias entre clases o módulos y se reduce la cantidad de código, permitiendo en el caso anterior que A acceda directamente a C.
+- The middle man (el hombre del medio): Sí una clase realiza solo una acción y la acción es delegar en otra clase (entonces por qué existe esta clase?), esto puede ser el resultado de la eliminación de cadena de mensajes (punto anterior) o una refactorización incompleta. 
+
