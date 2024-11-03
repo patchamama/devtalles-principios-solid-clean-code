@@ -743,7 +743,7 @@ Duplicidad accidental:
 
 ## Sección 5. Principios SOLID
 
-Son principios y no reglas (esta última es algo que hay que cumplir). 
+Son principios (son recomendaciones) y no reglas (esta última es algo que hay que cumplir). 
 
 Los 5 principios S.O.L.I.D. de diseño de software son:
 - S – Single Responsibility Principle (SRP)
@@ -751,3 +751,16 @@ Los 5 principios S.O.L.I.D. de diseño de software son:
 - L – Liskov Substitution Principle (LSP)
 - I – Interface Segregation Principle (ISP)
 - D – Dependency Inversion Principle (DIP)
+
+### Principios SOLID - SRP - Responsabilidad única
+
+Los principios de SOLID nos indican cómo organizar nuestras funciones y estructuras de datos en componentes y cómo dichos componentes deben estar interconectados.
+
+> "Nunca debería haber más de un motivo por el cual cambiar una clase o un módulo". - Robert C. Martin
+
+Tener más de una responsabilidad de nuestras clases o módulos, hace que nuestro código sea más difícil de mantener, testear y leer, y hace que el código sea más rígido y menos tolerante al cambio. 
+
+"tener una única responsabilidad" !== "hacer una única cosa", queremos que nuestras clases y módulos se encarguen de hacer un grupo de procesos que estén estrechamente relacionados entre sí. El principio SRP no se base en crear clases de un solo método sino en diseñar componentes que estén solo expuestos a una fuente de cambios.
+
+
+
