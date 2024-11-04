@@ -784,5 +784,14 @@ Es un principio que depende mucho del contexto y establece que las entidades de 
 
 > "Las funciones que utilicen punteros o referencias a clases base, deben ser capaces de usar objetos de cases derivadas sin saberlo". - Robert C Martin
 
-Substitución de Liskov: "Siendo U un subtipo de T, cualquier instancia de T debería poder ser sustituida por cualquier instancia de U sin alterar las propiedades del sistema".
+Substitución de Liskov: "Siendo U un subtipo de T, cualquier instancia de T debería poder ser sustituida por cualquier instancia de U sin alterar las propiedades del sistema". En otras palabras, cualquier clase A heredera de una clase B, entonces cualquier instancia de B puede ser sustituida ... 
 
+### Principio de segregación de interfaz
+
+> "Los clientes no deberían estar obligados a depender de interfaces que no utilicen". - Robert C. Martin
+
+Las clases no deben de heredar métodos que no necesitan, y así el código no se hace vulnerable a cambios.
+
+Detecar violaciones de este principio:
+- Sí las interfaces que diseñamos nos obligan a violar los principios de responsabilidad única y substituticón de Liskov.
+- 
