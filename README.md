@@ -779,3 +779,10 @@ Es un principio que depende mucho del contexto y establece que las entidades de 
 
 - Cambios normalmente afectan nuestra clase o módulo,
 - Cuando una clase o módulo afecta muchas capas (presentación, almacenamiento, etc.). Sí la clase o módulo tiene demasiada responsabilidad, seguramente viola el OPC.
+
+### Principio de Substitución de Liskov
+
+> "Las funciones que utilicen punteros o referencias a clases base, deben ser capaces de usar objetos de cases derivadas sin saberlo". - Robert C Martin
+
+Substitución de Liskov: "Siendo U un subtipo de T, cualquier instancia de T debería poder ser sustituida por cualquier instancia de U sin alterar las propiedades del sistema".
+
