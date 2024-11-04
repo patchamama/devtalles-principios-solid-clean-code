@@ -771,3 +771,11 @@ Tener más de una responsabilidad de nuestras clases o módulos, hace que nuestr
 - Cantidad elevada de métodos públicos (demasiados métodos expuestos al mundo exterior, lo que determina que está haciendo demasiadas cosas),
 - En la clase o módulo hay un excesivo número de líneas de código, lo que determina que pueda tener demasiada responsabilidad.
 
+### OCP - Principio de abierto y cerrado
+
+Es un principio que depende mucho del contexto y establece que las entidades de software (clases, módulos, métodos, etc.) deben estar abiertas para la extensión, pero cerradas para la modificación. Este principio también se puede lograr de muchas otras maneras, incluso mediante el uso de la herencia o mediante patrones de diseño de composición como **el patrón de estrategia**.
+
+### Detectar violaciones de OPC - Principio de abierto y cerrado
+
+- Cambios normalmente afectan nuestra clase o módulo,
+- Cuando una clase o módulo afecta muchas capas (presentación, almacenamiento, etc.). Sí la clase o módulo tiene demasiada responsabilidad, seguramente viola el OPC.
