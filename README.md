@@ -794,4 +794,19 @@ Las clases no deben de heredar métodos que no necesitan, y así el código no s
 
 Detecar violaciones de este principio:
 - Sí las interfaces que diseñamos nos obligan a violar los principios de responsabilidad única y substituticón de Liskov.
-- 
+
+
+### Principio de inversión de dependencias
+
+> "Los módulos de alto nivel no deben de depender de módulos de bajo nivel. Ambos deben depender de abstracciones. Las abstracciones no deben depender de concreciones. Los detalles deben depender de abstracciones". - Rober C. Martin
+
+Explicación:
+- Los módulos de alto nivel no deberían depender de módulos de bajo nivel. 
+- Ambos deberían depender de abstracciones,
+- Las abstracciones no deberían depender de detalles,
+- Los detalles deberían de depender de las abstracciones
+
+Los componentes más importanes son aquellos centrados en resolver el problema subyacente al negocio, es decir, la capa de dominio.
+
+Los menos importantes son los que están próximos a la infraestructura, es decir, aquellos relacionados con la UI, la persistencia, la comunicación con API externas, etc. 
+
